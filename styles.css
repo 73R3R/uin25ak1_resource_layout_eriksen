@@ -30,6 +30,10 @@ body{
                 background-color: #fff;
                 color: #2A324B;
             }
+            button.active{
+                background-color: #fff;
+                color: #2A324B;
+            }
         }
         #content{
             color: black;

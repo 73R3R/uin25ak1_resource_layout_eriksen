@@ -1,3 +1,4 @@
+//generere knapper som kan kjøre funksjon loadResource
 document.getElementById("cats").innerHTML = `
     <button onclick="loadResource('HTML')">HTML</button>
     <button onclick="loadResource('CSS')">CSS</button>
@@ -7,9 +8,10 @@ document.getElementById("cats").innerHTML = `
 `
 
 function loadResource(category){
+    //finne kategori som mather med onclick...("XXXX")
     const resource = resources.find(r => r.category === category);
-
     const text = document.getElementById("content")
+    //fyller inn HTML i content basert på kategorien fra button som er trykket
     text.innerHTML = `
     <h1>${resource.category}
     <p>${resource.text}
@@ -21,12 +23,15 @@ function loadResource(category){
     `
 }
 
+//eventlistener når siden lastes inn
 document.addEventListener("DOMContentLoaded", () => {
+    //filter, map og flat for å printe ut linkene i category=HTML
     const Links = resources
         .filter(resource => resource.category === 'HTML') 
         .map(resource => resource.sources) 
         .flat()
 
+        //HTML nødvendig for linkene
     document.getElementById("content").innerHTML = `
         <ul>
             ${Links
