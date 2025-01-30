@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .map(resource => resource.sources) 
         .flat()
 
-        //HTML nødvendig for linkene
+        //HTML nødvendig for linkene og map, join
     document.getElementById("content").innerHTML = `
         <ul>
             ${Links
